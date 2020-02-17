@@ -17,25 +17,36 @@ for char in data:
 # print(no_punct)
 
 data_lower = no_punct.lower()
-print(data_lower)
+# print(data_lower)
 
-def print_word_freq(file):
-    """Read in `file` and print out the frequency of words in that file."""
-    pass
+data_split = data_lower.split(" ")
+# print(data_split)
+
+no_stop_words = []
+for word in data_split:
+    if word not in STOP_WORDS:
+        no_stop_words.append(word)
+print(no_stop_words)
 
 
-if __name__ == "__main__":
-    import argparse
-    from pathlib import Path
 
-    parser = argparse.ArgumentParser(
-        description='Get the word frequency in a text file.')
-    parser.add_argument('file', help='file to read')
-    args = parser.parse_args()
+# def print_word_freq(file):
+#     """Read in `file` and print out the frequency of words in that file."""
+#     pass
 
-    file = Path(args.file)
-    if file.is_file():
-        print_word_freq(file)
-    else:
-        print(f"{file} does not exist!")
-        exit(1)
+
+# if __name__ == "__main__":
+#     import argparse
+#     from pathlib import Path
+
+#     parser = argparse.ArgumentParser(
+#         description='Get the word frequency in a text file.')
+#     parser.add_argument('file', help='file to read')
+#     args = parser.parse_args()
+
+#     file = Path(args.file)
+#     if file.is_file():
+#         print_word_freq(file)
+#     else:
+#         print(f"{file} does not exist!")
+#         exit(1)
