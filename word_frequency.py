@@ -32,6 +32,9 @@ def print_word_freq(file):
             no_stop_words.append(word)
     # print(no_stop_words)
 
+    # OR:
+    # no_stop_words = [word for word in words if word not in STOP_WORDS]
+
     def word_freq(no_stop_words):
         counts = {}
 
